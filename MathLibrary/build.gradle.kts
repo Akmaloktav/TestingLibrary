@@ -1,11 +1,12 @@
 plugins {
     alias(libs.plugins.android.library)
     alias(libs.plugins.kotlin.android)
+    id("maven-publish")
 }
 
 android {
     namespace = "com.akmal.mathlibrary"
-    compileSdk = 34
+    compileSdk = 35
 
     defaultConfig {
         minSdk = 24
@@ -40,4 +41,17 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
+}
+
+publishing {
+    publications {
+        register<MavenPublication>("release") {
+            afterEvaluate{
+                from(components["release"])
+                groupId = "com.github.Akmaloktav"
+                artifactId = "MathLibrary"
+                version = "1.0.0"
+            }
+        }
+    }
 }

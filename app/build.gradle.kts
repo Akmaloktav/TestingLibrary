@@ -5,7 +5,7 @@ plugins {
 
 android {
     namespace = "com.akmal.testinglibrary"
-    compileSdk = 34
+    compileSdk = 35
 
     defaultConfig {
         applicationId = "com.akmal.testinglibrary"
@@ -45,4 +45,5 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
+    implementation(project(":MathLibrary"))
 }
