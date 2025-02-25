@@ -19,8 +19,8 @@ class MainActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
-        val point1 = Point(14.0, 12.0)
-        val point2 = Point(12.2, 12.1)
+        val point1 = Point(21.0, 12.0)
+        val point2 = Point(12.2, 50.1)
         Log.d("TAG", "onCreate: ${point1.calculateDistanceTo(point2)}")
 
     }

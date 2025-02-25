@@ -8,3 +8,9 @@ data class Point(val x: Double, val y: Double)
 fun Point.calculateDistanceTo(point: Point): Double {
     return sqrt((x - point.x).pow(2) + (y - point.y).pow(2))
 }
+
+fun Point.midpointTo(point: Point): Point {
+    val midX = (x + point.x) / 2
+    val midY = (y + point.y) / 2
+    return Point(midX, midY)
+}
